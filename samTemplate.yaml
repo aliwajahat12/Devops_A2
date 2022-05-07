@@ -11,7 +11,8 @@ Resources:
       Description: 'Lambda function for CD Demo'
       MemorySize: 128
       Timeout: 30
-      Role: 'arn:aws:iam::604823895931:role/MyLambdaRole'
+      # Role: 'arn:aws:iam::604823895931:role/MyLambdaRole'
+      Role: 'arn:aws:iam::604823895931:role/service-role/hello-lambda-role-7g3puort'
       Events:
         getAZsAPI:
           Type: Api
