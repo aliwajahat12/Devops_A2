@@ -1,10 +1,18 @@
 version: 0.1
 phases:
   install:
+    runtime-versions:
+      python: 3.8
+  pre_build:
     commands:
-      # - echo "Hello," >> samTemplate.yaml
+      - echo "Pre Build - Nothing to do"
+  build:  
+    commands:
       # - echo "Hello," >> outputSamTemplate.yaml
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket devops-wajahat-a2 --output-template-file outputSamTemplate.yaml
+  post_build:
+    commands:
+      - echo "Post Build - Nothing to do"
 artifacts:
   type: zip
   files:
